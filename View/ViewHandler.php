@@ -519,7 +519,7 @@ class ViewHandler implements ConfigurableViewHandlerInterface, ContainerAwareInt
             return $view->getData();
         }
 
-        if ($form->isValid() || !$form->isSubmitted()) {
+        if (!$form->isSubmitted() || $form->isValid()) {
             return $form;
         }
 
